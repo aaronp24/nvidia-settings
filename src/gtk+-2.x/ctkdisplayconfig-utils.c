@@ -4136,8 +4136,6 @@ nvDisplayPtr layout_get_display(const nvLayoutPtr layout,
  * Code adapted from nvidia-xconfig
  */
 
-extern const char *pNV_ID;
-
 static void update_banner(XConfigPtr config)
 {
     static const char *banner =
@@ -4178,7 +4176,7 @@ static void update_banner(XConfigPtr config)
 
     /* add our prefix lines at the start of the comment */
     config->comment = g_strconcat(prefix, banner,
-                                  "# ", pNV_ID, "\n",
+                                  "# " NV_ID_STRING "\n",
                                   (s ? s : ""),
                                   NULL);
     if (s) g_free(s);
